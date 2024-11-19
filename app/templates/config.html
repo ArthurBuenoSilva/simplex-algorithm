@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Simplex - Configuração
+{% endblock %}
+
+{% block content %}
+    <div class="flex justify-center items-center w-full h-full space-x-4 p-4">
+        <section class="w-3/12 2xl:w-2/12 h-full p-4 border rounded-lg shadow bg-modalMessageBackground border-gray-700">
+            <h2 class="text-white text-xl font-bold">Pré-configuração</h2>
+            <form id="pre-config-form" class="flex flex-col justify-between w-full h-full p-6">
+                <div class="flex flex-col w-full h-full space-y-4">
+                    <div class="flex flex-col relative w-full items-center">
+                        <label for="var-qtd" class="block mb-2 text-sm font-medium text-white w-full max-w-72">N° de variáveis</label>
+                        <input type="number" id="var-qtd" min="1"
+                               class="block w-full p-2 max-w-72 border rounded-lg text-base border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div class="flex flex-col relative w-full items-center">
+                        <label for="restrictions-qtd" class="block mb-2 text-sm font-medium text-white w-full max-w-72">N° de
+                            restrições</label>
+                        <input type="number" id="restrictions-qtd" min="1"
+                               class="block w-full p-2 max-w-72 border rounded-lg text-base border-gray-600 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="flex justify-end w-full">
+                    <button
+                        type="button"
+                        class="text-white w-1/2 min-w-24 2xl:w-1/4 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 cursor-not-allowed"
+                        id="continue-btn"
+                        disabled
+                    >
+                        Continuar
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="w-9/12 2xl:w-10/12 h-full p-4 border rounded-lg shadow bg-modalMessageBackground border-gray-700">
+            <h2 class="text-white text-xl font-bold">Configuração PPL</h2>
+            <div class="flex flex-col h-full w-full space-y-2 p-6" id="ppl-config">
+            </div>
+        </section>
+    </div>
+{% endblock %}
+
+
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='js/config.js') }}"></script>
+{% endblock %}
