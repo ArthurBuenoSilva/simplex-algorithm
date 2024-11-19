@@ -13,6 +13,7 @@ def create_app(config_class=Configuration):
 
     # Register blueprints
     from app.simplex import bp as home_bp
+
     app.register_blueprint(home_bp)
 
     return app
